@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get("/", { :controller => "math", :action => "addition_form" })
   get("/add", { :controller => "math", :action => "addition_form" })
   get("/wizard_add", { :controller => "math", :action => "addition" })
   get("/subtract", { :controller => "math", :action => "subtraction_form" })

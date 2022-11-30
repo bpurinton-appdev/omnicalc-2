@@ -32,6 +32,6 @@ class MathController < ApplicationController
   end
 
   def division_form
-    render({ :template => "form_html/division_form.html.erb" })
+    render({ :template => "form_html/div_form.html.erb" })
   end
 end
