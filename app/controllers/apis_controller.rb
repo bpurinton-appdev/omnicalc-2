@@ -5,8 +5,10 @@ class ApisController < ApplicationController
 
   def map2coord
     @user_street_address = params.fetch("user_street_address")
-    @url = "https://maps.googleapis.com/maps/api/geocode/json?address=5807+S+Woodlawn+Ave&key=" + ENV.fetch("GMAPS_KEY")
+    @url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + @user_street_address.gsub(" ", "+") + "&key=" + ENV.fetch("GMAPS_KEY")
+    p @url
     raw_data = open(@url).read
+    p raw_data
     parsed_data = JSON.parse(raw_data)
     results_array = parsed_data.fetch("results")
     first_result = results_array.at(0)
