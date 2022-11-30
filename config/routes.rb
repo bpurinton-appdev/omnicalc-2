@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   get("/wizard_multiply", { :controller => "math", :action => "multiplication" })
   get("/divide", { :controller => "math", :action => "division_form" })
   get("/wizard_divide", { :controller => "math", :action => "division" })
+  get("/street_to_coords/new", { :controller => "apis", :action => "map2coord_form" })
+  get("/street_to_coords/result", { :controller => "apis", :action => "map2coord" })
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
